@@ -1,63 +1,83 @@
-# Android generated
-bin
-gen
-libs
-obj
-lint.xml
+# Gradle files
+.gradle/
+build/
+buildout/
 
-# IntelliJ IDEA
-.idea
-*.iml
-*.ipr
-*.iws
-classes
-gen-external-apklibs
-
-# Eclipse
-.project
-.classpath
-.settings
-.checkstyle
-.cproject
-
-# Gradle
-.gradle
-build
-buildout
-out
-
-# Maven
-target
-release.properties
-pom.xml.*
-
-# Ant
-ant.properties
+# Local configuration file (sdk path, etc)
 local.properties
-proguard.cfg
-proguard-project.txt
 
-# Other
+# Android Studio
+*.iml
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/jarRepositories.xml
+
+# Android SDK
+android-sdk/
+sdk/
+*.zip
+
+# Log Files
+*.log
+
+# OS generated files
 .DS_Store
-dist
-tmp
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# VP9 extension
-extensions/vp9/src/main/jni/libvpx
-extensions/vp9/src/main/jni/libvpx_android_configs
-extensions/vp9/src/main/jni/libyuv
+# Temporary files
+*.tmp
+*.temp
 
-# Opus extension
-extensions/opus/src/main/jni/libopus
+# APK files
+*.apk
+*.aab
 
-# FLAC extension
-extensions/flac/src/main/jni/flac
+# Keystore files
+*.jks
+*.keystore
 
-# FFmpeg extension
-extensions/ffmpeg/src/main/jni/ffmpeg
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
 
-# Cronet extension
-extensions/cronet/jniLibs/*
-!extensions/cronet/jniLibs/README.md
-extensions/cronet/libs/*
-!extensions/cronet/libs/README.md
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+
+# Android Profiling
+*.hprof
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
