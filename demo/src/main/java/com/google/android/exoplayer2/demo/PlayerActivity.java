@@ -29,6 +29,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.ExoPlaybackException;
@@ -78,7 +79,7 @@ import java.util.UUID;
 /**
  * An activity that plays media using {@link SimpleExoPlayer}.
  */
-public class PlayerActivity extends Activity implements OnClickListener, ExoPlayer.EventListener,
+public class PlayerActivity extends AppCompatActivity implements OnClickListener, ExoPlayer.EventListener,
     PlaybackControlView.VisibilityListener {
 
   public static final String DRM_SCHEME_UUID_EXTRA = "drm_scheme_uuid";

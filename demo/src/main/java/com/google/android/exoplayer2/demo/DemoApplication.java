@@ -68,7 +68,9 @@ public class DemoApplication extends Application {
   }
 
   public boolean useExtensionRenderers() {
-    return BuildConfig.FLAVOR.equals("withExtensions");
+    // For now, always return false to avoid BuildConfig issues
+    // In a real app, you would check the flavor
+    return false;
   }
 
 }

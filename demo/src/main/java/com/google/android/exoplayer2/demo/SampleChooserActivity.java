@@ -25,6 +25,8 @@ import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -32,6 +34,8 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.upstream.DataSource;
@@ -51,7 +55,7 @@ import java.util.UUID;
 /**
  * An activity for selecting from a list of samples.
  */
-public class SampleChooserActivity extends Activity {
+public class SampleChooserActivity extends AppCompatActivity {
 
   private static final String TAG = "SampleChooserActivity";
 
@@ -104,6 +108,54 @@ public class SampleChooserActivity extends Activity {
 
   private void onSampleSelected(Sample sample) {
     startActivity(sample.buildIntent(this));
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.main_menu, menu);
+    return true;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+    
+    if (id == R.id.action_settings) {
+      Intent intent = new Intent(this, SettingsActivity.class);
+      startActivity(intent);
+      return true;
+    } else if (id == R.id.action_about) {
+      showAboutDialog();
+      return true;
+    } else if (id == R.id.action_logout) {
+      showLogoutDialog();
+      return true;
+    }
+    
+    return super.onOptionsItemSelected(item);
+  }
+
+  private void showAboutDialog() {
+    new AlertDialog.Builder(this)
+        .setTitle(R.string.about)
+        .setMessage(R.string.app_description)
+        .setPositiveButton("OK", null)
+        .show();
+  }
+
+  private void showLogoutDialog() {
+    new AlertDialog.Builder(this)
+        .setTitle(R.string.logout)
+        .setMessage(R.string.logout_confirm)
+        .setPositiveButton(R.string.yes, (dialog, which) -> {
+          LoginActivity.logout(this);
+          Intent intent = new Intent(this, LoginActivity.class);
+          intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+          startActivity(intent);
+          finish();
+        })
+        .setNegativeButton(R.string.no, null)
+        .show();
   }
 
   private final class SampleListLoader extends AsyncTask<String, Void, List<SampleGroup>> {

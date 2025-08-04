@@ -15,7 +15,7 @@
  */
 package com.google.android.exoplayer2.source.hls.playlist;
 
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import com.google.android.exoplayer2.C;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

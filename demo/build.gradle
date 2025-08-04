@@ -14,35 +14,55 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace 'com.google.android.exoplayer2.demo'
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
+        applicationId "com.google.android.exoplayer2.demo"
+        minSdkVersion 21
         targetSdkVersion project.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
         release {
             shrinkResources true
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             jniDebuggable = true
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    flavorDimensions "extensions"
     productFlavors {
-        noExtensions
-        withExtensions
+        noExtensions {
+            dimension "extensions"
+        }
+        withExtensions {
+            dimension "extensions"
+        }
     }
 }
 
 dependencies {
-    compile project(':library')
-    withExtensionsCompile project(path: ':extension-ffmpeg')
-    withExtensionsCompile project(path: ':extension-flac')
-    withExtensionsCompile project(path: ':extension-opus')
-    withExtensionsCompile project(path: ':extension-vp9')
+    implementation project(':library')
+    withExtensionsImplementation project(path: ':extension-ffmpeg')
+    withExtensionsImplementation project(path: ':extension-flac')
+    withExtensionsImplementation project(path: ':extension-opus')
+    withExtensionsImplementation project(path: ':extension-vp9')
+    
+    // AndroidX dependencies
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.preference:preference:1.2.0'
 }

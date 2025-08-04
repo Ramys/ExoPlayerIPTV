@@ -14,16 +14,22 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.google.android.exoplayer2.testutil'
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 21
         targetSdkVersion project.ext.targetSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    compile project(':library')
-    compile 'org.mockito:mockito-core:1.9.5'
+    implementation project(':library')
+    implementation 'org.mockito:mockito-core:1.9.5'
 }

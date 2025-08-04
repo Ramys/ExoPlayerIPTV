@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="media_url" type="id"/>
+    <item name="play" type="id"/>
+    <item name="chooser" type="id"/>
+    <item name="root" type="id"/>
+    <item name="controls_root" type="id"/>
+    <item name="debug_text_view" type="id"/>
+    <item name="retry_button" type="id"/>
+    <item name="player_view" type="id"/>
+    <item name="sample_list" type="id"/>
+    <item name="username_edit" type="id"/>
+    <item name="password_edit" type="id"/>
+    <item name="username_layout" type="id"/>
+    <item name="password_layout" type="id"/>
+    <item name="login_button" type="id"/>
+</resources>

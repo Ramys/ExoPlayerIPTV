@@ -20,7 +20,7 @@ import android.content.Context;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.MediaCodec;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.view.Surface;
 import com.google.android.exoplayer2.util.Util;
 import java.lang.annotation.Retention;
