@@ -21,7 +21,7 @@ import android.graphics.SurfaceTexture;
 import android.media.MediaCodec;
 import android.media.PlaybackParams;
 import android.os.Handler;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;

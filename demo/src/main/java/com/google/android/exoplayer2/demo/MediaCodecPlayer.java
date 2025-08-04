@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by Young on 17/3/23.
  */
 
-public class MediaCodecPlayer extends Activity implements View.OnClickListener{
+public class MediaCodecPlayer extends AppCompatActivity implements View.OnClickListener{
 
     private EditText edit;
     private Button play;
@@ -38,20 +39,18 @@ public class MediaCodecPlayer extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         Intent intent = null;
-        switch (v.getId()){
-            case R.id.play:
-                String url = edit.getText().toString();
-                if(url != null && !url.equals("")){
-                    intent = new Intent(this,PlayerActivity.class);
-                    intent.setData(Uri.parse(url));
-                    intent.setAction(PlayerActivity.ACTION_VIEW);
-                }else{
-                    return;
-                }
-                break;
-            case R.id.chooser:
-                intent = new Intent(this,SampleChooserActivity.class);
-                break;
+        int id = v.getId();
+        if (id == R.id.play) {
+            String url = edit.getText().toString();
+            if(url != null && !url.equals("")){
+                intent = new Intent(this,PlayerActivity.class);
+                intent.setData(Uri.parse(url));
+                intent.setAction(PlayerActivity.ACTION_VIEW);
+            }else{
+                return;
+            }
+        } else if (id == R.id.chooser) {
+            intent = new Intent(this,SampleChooserActivity.class);
         }
         if(intent != null){
             startActivity(intent);

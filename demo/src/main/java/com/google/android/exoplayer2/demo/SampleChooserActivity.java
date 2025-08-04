@@ -32,6 +32,7 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.upstream.DataSource;
@@ -51,7 +52,7 @@ import java.util.UUID;
 /**
  * An activity for selecting from a list of samples.
  */
-public class SampleChooserActivity extends Activity {
+public class SampleChooserActivity extends AppCompatActivity {
 
   private static final String TAG = "SampleChooserActivity";
 
