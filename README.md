@@ -10,6 +10,11 @@ Este é um projeto ExoPlayer atualizado para ser compatível com Android 13 e in
 - ✅ Material Design
 - ✅ Gradle 8.4
 - ✅ Android Gradle Plugin 8.1.4
+- ✅ Menu de opções com configurações
+- ✅ Sistema de preferências
+- ✅ Auto-login configurável
+- ✅ Funcionalidade de logout
+- ✅ Interface moderna e intuitiva
 
 ## Credenciais de Teste
 
@@ -87,6 +92,32 @@ Este é um projeto ExoPlayer atualizado para ser compatível com Android 13 e in
    - Use as credenciais: `admin` / `admin`
    - Após o login, você terá acesso ao player de mídia
 
+## Funcionalidades do App
+
+### 🔐 Sistema de Login
+- Tela de login com Material Design
+- Validação de credenciais
+- Auto-login configurável
+- Persistência de estado
+
+### ⚙️ Configurações
+- Menu de opções (3 pontos)
+- Tela de configurações completa
+- Preferências de auto-login
+- Configurações do player
+- Informações do app
+
+### 🎬 Player de Mídia
+- Reprodução de vídeo e áudio
+- Suporte a múltiplos formatos
+- Controles de reprodução
+- Interface otimizada
+
+### 🔄 Logout
+- Funcionalidade de logout
+- Confirmação antes de sair
+- Retorno à tela de login
+
 ## Principais Atualizações Realizadas
 
 ### 1. Atualização de Dependências
@@ -147,6 +178,25 @@ Se o login não funcionar:
 1. Use exatamente: usuário `admin`, senha `admin`
 2. Verifique se o app tem permissões de armazenamento
 3. Limpe os dados do app se necessário
+
+## Scripts Disponíveis
+
+### 🚀 install.sh
+Script de instalação automática:
+```bash
+./install.sh
+```
+
+### 🧪 test_app.sh
+Script de teste do aplicativo:
+```bash
+./test_app.sh
+```
+
+### 🔨 Compilação Manual
+```bash
+./gradlew :demo:assembleNoExtensionsDebug
+```
 
 ## Desenvolvimento
 

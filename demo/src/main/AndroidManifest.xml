@@ -99,6 +99,15 @@
       </intent-filter>
     </activity>
 
+    <activity android:name="com.google.android.exoplayer2.demo.SettingsActivity"
+        android:label="@string/settings"
+        android:parentActivityName="com.google.android.exoplayer2.demo.SampleChooserActivity"
+        android:exported="false">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value="com.google.android.exoplayer2.demo.SampleChooserActivity" />
+    </activity>
+
   </application>
 
 </manifest>

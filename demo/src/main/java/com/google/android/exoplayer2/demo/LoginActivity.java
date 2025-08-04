@@ -23,6 +23,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -52,6 +53,15 @@ public class LoginActivity extends AppCompatActivity {
 
         // Check if user is already logged in
         if (isLoggedIn()) {
+            navigateToMain();
+            return;
+        }
+
+        // Check auto-login preference
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean autoLogin = prefs.getBoolean("auto_login", true);
+        
+        if (autoLogin && isLoggedIn()) {
             navigateToMain();
             return;
         }

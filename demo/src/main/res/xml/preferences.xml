@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="@string/account_settings"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreference
+            android:key="auto_login"
+            android:title="@string/auto_login"
+            android:summary="@string/auto_login_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/player_settings"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreference
+            android:key="auto_play"
+            android:title="@string/auto_play"
+            android:summary="@string/auto_play_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="background_playback"
+            android:title="@string/background_playback"
+            android:summary="@string/background_playback_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/about_section"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="app_version"
+            android:title="@string/app_version_title"
+            android:summary="@string/app_version" />
+
+        <Preference
+            android:key="build_info"
+            android:title="@string/build_info"
+            android:summary="@string/build_info_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
